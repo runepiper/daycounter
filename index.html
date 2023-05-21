@@ -9,10 +9,10 @@
         <meta name="apple-mobile-web-app-status-bar-style" content="black">
         <link rel="apple-touch-icon-precomposed" href="apple-touch-icon.png">
         <meta name="theme-color" content="#5F4B8B">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jgthms/minireset.css@master/minireset.min.css">
         <style type="text/css">
-            /*! minireset.css v0.0.3 | MIT License | github.com/jgthms/minireset.css */html,body,p,ol,ul,li,dl,dt,dd,blockquote,figure,fieldset,legend,textarea,pre,iframe,hr,h1,h2,h3,h4,h5,h6{margin:0;padding:0}h1,h2,h3,h4,h5,h6{font-size:100%;font-weight:normal}ul{list-style:none}button,input,select,textarea{margin:0}html{box-sizing:border-box}*,*:before,*:after{box-sizing:inherit}img,embed,iframe,object,audio,video{height:auto;max-width:100%}iframe{border:0}table{border-collapse:collapse;border-spacing:0}td,th{padding:0;text-align:left}
             html {
-		overflow: hidden;
+                overflow: hidden;
                 background-position: center center;
                 background-repeat: no-repeat;
                 background-size: cover;
@@ -41,13 +41,15 @@
                 border-radius: 100%;
                 max-width: 150px;
                 margin-bottom: 20px;
+                box-shadow: 0 0 20px rgba(0,0,0,0.35);
             }
 
-            h1 {
+            #days {
                 text-transform: uppercase;
                 font-weight: bold;
                 font-size: 3rem;
                 margin-bottom: 20px;
+                display: block;
             }
 
             p {
@@ -64,15 +66,16 @@
         </style>
     </head>
     <body>
-        <img src="4aeb3f9d-ad00-4996-b273-fab366d7ce33.JPG" />
-	<h1 id="days"></h1>
+        <a href="https://www.youtube.com/watch?v=YilAzRVHnko&list=PLwMlb_S5q5ttKHHHqJPSPnqou_c9CMPNU" target="_blank" rel="noopener">
+            <img src="4aeb3f9d-ad00-4996-b273-fab366d7ce33.JPG" />
+        </a>
+        <output id="days"></output>
         <p>I'll always be on your team</p>
         <script type="text/javascript">
             document.addEventListener('DOMContentLoaded', function() {
                 days = Math.floor((new Date() - new Date('2017-10-06'))/(1000*60*60*24));
-
-                this.getElementById('days').innerText = days + ' Tage';
-	   });
+                this.getElementById('days').value = days + ' Tage';
+            });
         </script>
     </body>
 </html>
