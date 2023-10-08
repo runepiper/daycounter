@@ -85,7 +85,7 @@
 
                 var years = Math.floor(days / 365),
                     months = Math.floor(12/10 * ((days / 365 - years) * 10)),
-                    lastingDays = Math.floor(days - (years * 365.25) - (months * 30.1));
+                    lastingDays = Math.floor(days - (years * 365) - (months * 30.1));
 
                 this.getElementById('formatted').value = years + ' Jahre ';
 
