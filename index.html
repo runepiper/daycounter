@@ -80,12 +80,13 @@
         <p>I'll always be on your team</p>
         <script type="text/javascript">
             document.addEventListener('DOMContentLoaded', function() {
-                var days = Math.floor((new Date() - new Date('2017-10-06T23:59:59+02:00'))/(1000*60*60*24));
+                var differenceDate = new Date(new Date() - new Date('2017-10-06')),
+                    days = Math.floor(differenceDate / (1000*60*60*24));
                 this.getElementById('days').value = days + ' Tage';
 
                 var years = Math.floor(days / 365),
-                    months = Math.floor(12/10 * ((days / 365 - years) * 10)),
-                    lastingDays = Math.floor(days - (years * 365) - (months * 30.1));
+                    months = differenceDate.getMonth(),
+                    lastingDays = differenceDate.getDate() - 1;
 
                 this.getElementById('formatted').value = years + ' Jahre ';
 
