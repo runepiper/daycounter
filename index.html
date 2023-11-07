@@ -91,11 +91,13 @@
                 this.getElementById('formatted').value = years + ' Jahre ';
 
                 if (months > 0) {
-                    this.getElementById('formatted').value += months + ' Monate ';
+                    this.getElementById('formatted').value += months;
+                    this.getElementById('formatted').value += months !== 1 ? ' Monate ' : ' Monat ';
                 }
 
                 if (lastingDays > 0) {
-                    this.getElementById('formatted').value += lastingDays + ' Tage';
+                    this.getElementById('formatted').value += lastingDays;
+                    this.getElementById('formatted').value += lastingDays !== 1 ? ' Tage' : ' Tag';
                 }
 
                 setTimeout(function() {
