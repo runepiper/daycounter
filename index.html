@@ -98,9 +98,8 @@
                 this.getElementById('days').value = days + ' Tage';
 
                 var years = Math.floor(days / 365),
-                    months = differenceDate.getMonth(),
-                    lastingDays = differenceDate.getDate() - 1;
-
+                    months = 12 - (new Date('2017-10-06')).getMonth(),
+                    lastingDays = Math.abs((new Date()).getDate() - 6);
                 this.getElementById('formatted').value = years + ' Jahre ';
 
                 if (months > 0) {
