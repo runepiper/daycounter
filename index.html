@@ -93,13 +93,15 @@
         <p>I'll always be on your team</p>
         <script type="text/javascript">
             document.addEventListener('DOMContentLoaded', function() {
-                var differenceDate = new Date(new Date() - new Date('2017-10-06')),
-                    days = Math.floor(differenceDate / (1000*60*60*24));
+                var mainDate = new Date('2017-10-06'),
+                    n = 86400000;
+                    differenceDate = new Date(new Date() - mainDate),
+                    days = Math.floor(differenceDate / n);
                 this.getElementById('days').value = days + ' Tage';
 
                 var years = Math.floor(days / 365),
-                    months = 12 - (new Date('2017-10-06')).getMonth(),
-                    lastingDays = Math.abs((new Date()).getDate() - 6);
+                    months = 12 - (mainDate).getMonth(),
+                    lastingDays = Math.abs(Math.round((new Date() - new Date().setDate(mainDate.getDate())) / n));
                 this.getElementById('formatted').value = years + ' Jahre ';
 
                 if (months > 0) {
