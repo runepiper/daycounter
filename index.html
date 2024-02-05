@@ -101,8 +101,12 @@
 
                 var years = Math.floor(days / 365),
                     months = 12 - (mainDate).getMonth(),
-                    lastingDays = Math.abs(Math.round((new Date() - new Date().setDate(mainDate.getDate())) / n));
+                    lastingDays = Math.round(new Date() - new Date().setDate(mainDate.getDate())) / n;
                 this.getElementById('formatted').value = years + ' Jahre ';
+
+                if (lastingDays < 0) {
+                    lastingDays = Math.abs(31 + lastingDays);
+                }
 
                 if (months > 0) {
                     this.getElementById('formatted').value += months;
