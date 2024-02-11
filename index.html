@@ -100,15 +100,14 @@
                 this.getElementById('days').value = days + ' Tage';
 
                 var years = Math.floor(days / 365),
-                    months = 12 - (mainDate).getMonth(),
+                    months = new Date(Math.round(new Date() - mainDate)).getMonth(),
                     lastingDays = Math.round(new Date() - new Date().setDate(mainDate.getDate())) / n;
                 this.getElementById('formatted').value = years + ' Jahre ';
-
                 if (lastingDays < 0) {
                     lastingDays = Math.abs(31 + lastingDays);
                 }
 
-                if (months > 0) {
+                if (months > 0 && months < 12) {
                     this.getElementById('formatted').value += months;
                     this.getElementById('formatted').value += months !== 1 ? ' Monate ' : ' Monat ';
                 }
