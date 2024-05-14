@@ -19,4 +19,4 @@ jobs:
           4aeb3f9d-ad00-4996-b273-fab366d7ce33.JPG \
           apple-touch-icon.png \
           index.html \
-          github-ci@daycounter.runepiper.de:/home/github-ci/daycounter.runepiper.de
+          github-ci@daycounter.runepiper.de:/var/www/html
